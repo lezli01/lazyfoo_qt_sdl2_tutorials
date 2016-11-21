@@ -4,13 +4,14 @@
 
 #include <exception.h>
 
-int main() {
-    int SCREEN_WIDTH = 640;
-    int SCREEN_HEIGHT = 480;
+int SCREEN_WIDTH = 640;
+int SCREEN_HEIGHT = 480;
 
-    SDL_Window *window = nullptr;
-    SDL_Surface *surface = nullptr;
+SDL_Window *window = nullptr;
+SDL_Surface *surface = nullptr;
 
+int main(int argc, char* argv[])
+{
     try{
         if (SDL_Init(SDL_INIT_VIDEO) < 0) {
             throw Exception(QStringLiteral("Could not initialize SDL"));
@@ -31,7 +32,7 @@ int main() {
 
         SDL_DestroyWindow(window);
     } catch (const Exception &exception) {
-        std::cerr << "Error: " << exception.stdMsg() << std::endl;
+        std::cerr << "Error: " << exception.stdMsg() << " " << SDL_GetError() << std::endl;
     }
 
     SDL_Quit();

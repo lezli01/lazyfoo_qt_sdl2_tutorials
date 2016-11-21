@@ -13,3 +13,4 @@ include(qt)
 include_directories(src/common)
 
 add_subdirectory(src/tutorial_001)
+add_subdirectory(src/tutorial_002)
