@@ -30,7 +30,7 @@ void init()
 
 void loadMedia()
 {
-    imageSurface = SDL_LoadBMP(qApp->applicationDirPath().append("/x_out_the_window.bmp").toStdString().c_str());
+    imageSurface = SDL_LoadBMP(qApp->applicationDirPath().append(QStringLiteral("/x_out_the_window.bmp")).toStdString().c_str());
 
     if (!imageSurface) {
         throw Exception(QStringLiteral("Could not load bmp image"));
