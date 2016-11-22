@@ -12,6 +12,7 @@ include(qt)
 
 include_directories(src/common)
 
+add_subdirectory(src/common)
 add_subdirectory(src/tutorial_001)
 add_subdirectory(src/tutorial_002)
 add_subdirectory(src/tutorial_003)
@@ -21,3 +22,4 @@ add_subdirectory(src/tutorial_006)
 add_subdirectory(src/tutorial_007)
 add_subdirectory(src/tutorial_008)
 add_subdirectory(src/tutorial_009)
+add_subdirectory(src/tutorial_010)
