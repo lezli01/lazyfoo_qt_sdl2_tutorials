@@ -11,7 +11,15 @@ class LTexture
         ~LTexture();
 
         void setColor(Uint8 r, Uint8 g, Uint8 b);
-        void render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clip = nullptr);
+        void render(
+                SDL_Renderer *renderer,
+                int x,
+                int y,
+                SDL_Rect *clip = nullptr,
+                double angle = 0.0,
+                SDL_Point *center = nullptr,
+                SDL_RendererFlip flip = SDL_FLIP_NONE
+        );
 
         void setBlendMode(SDL_BlendMode blendMode);
         void setAlpha(Uint8 alpha);

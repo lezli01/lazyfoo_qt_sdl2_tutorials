@@ -16,16 +16,24 @@ void LTexture::setColor(Uint8 r, Uint8 g, Uint8 b)
     SDL_SetTextureColorMod(texture, r, g, b);
 }
 
-void LTexture::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clip)
+void LTexture::render(
+        SDL_Renderer *renderer,
+        int x,
+        int y,
+        SDL_Rect *clip,
+        double angle,
+        SDL_Point *center,
+        SDL_RendererFlip flip
+)
 {
     SDL_Rect renderRect = {
             x,
             y,
-            clip ? clip->w : width,
-            clip ? clip->h : height
+            clip ? clip->w : width * 2,
+            clip ? clip->h : height * 2
     };
 
-    SDL_RenderCopy(renderer, texture, clip, &renderRect);
+    SDL_RenderCopyEx(renderer, texture, clip, &renderRect, angle, center, flip);
 }
 
 
