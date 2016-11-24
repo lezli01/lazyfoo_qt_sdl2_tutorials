@@ -27,3 +27,14 @@ void LTexture::render(SDL_Renderer *renderer, int x, int y, SDL_Rect *clip)
 
     SDL_RenderCopy(renderer, texture, clip, &renderRect);
 }
+
+
+void LTexture::setBlendMode(SDL_BlendMode blendMode)
+{
+    SDL_SetTextureBlendMode(texture, blendMode);
+}
+
+void LTexture::setAlpha(Uint8 alpha)
+{
+    SDL_SetTextureAlphaMod(texture, alpha);
+}
