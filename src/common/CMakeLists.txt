@@ -1,5 +1,6 @@
 add_library(common
     utils.cpp
+    ltexture.cpp
 )
 
 target_link_libraries(common
