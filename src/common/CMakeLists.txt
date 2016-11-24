@@ -6,5 +6,6 @@ add_library(common
 target_link_libraries(common
     ${SDL2_LIBRARIES}
     ${SDL2IMAGE_LIBRARIES}
+    ${SDL2TTF_LIBRARIES}
     Qt5::Core
 )

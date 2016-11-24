@@ -6,6 +6,17 @@ LTexture::LTexture(SDL_Renderer *renderer, const QString &path)
     : texture(loadTexture(renderer, path, &width, &height))
 {}
 
+LTexture::LTexture(SDL_Renderer *renderer, TTF_Font *font, const QString &text, SDL_Color &color)
+{
+    SDL_Surface *surface = TTF_RenderText_Blended(font, text.toStdString().c_str(), color);
+    texture = SDL_CreateTextureFromSurface(renderer, surface);
+
+    width = surface->w;
+    height = surface->h;
+
+    SDL_FreeSurface(surface);
+}
+
 LTexture::~LTexture()
 {
     SDL_DestroyTexture(texture);
@@ -29,8 +40,8 @@ void LTexture::render(
     SDL_Rect renderRect = {
             x,
             y,
-            clip ? clip->w : width * 2,
-            clip ? clip->h : height * 2
+            clip ? clip->w : width,
+            clip ? clip->h : height
     };
 
     SDL_RenderCopyEx(renderer, texture, clip, &renderRect, angle, center, flip);

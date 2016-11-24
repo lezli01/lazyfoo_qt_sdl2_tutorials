@@ -3,11 +3,13 @@
 #include <QString>
 
 #include <SDL.h>
+#include <SDL_ttf.h>
 
 class LTexture
 {
     public:
         LTexture(SDL_Renderer *renderer, const QString &path);
+        LTexture(SDL_Renderer *renderer, TTF_Font *font, const QString &text, SDL_Color &color);
         ~LTexture();
 
         void setColor(Uint8 r, Uint8 g, Uint8 b);
