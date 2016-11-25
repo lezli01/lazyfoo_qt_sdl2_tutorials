@@ -12,6 +12,8 @@ class LTexture
         LTexture(SDL_Renderer *renderer, TTF_Font *font, const QString &text, SDL_Color &color);
         ~LTexture();
 
+        void setSize(int w, int h);
+
         void setColor(Uint8 r, Uint8 g, Uint8 b);
         void render(
                 SDL_Renderer *renderer,

@@ -22,6 +22,12 @@ LTexture::~LTexture()
     SDL_DestroyTexture(texture);
 }
 
+void LTexture::setSize(int w, int h)
+{
+    width = w;
+    height = h;
+}
+
 void LTexture::setColor(Uint8 r, Uint8 g, Uint8 b)
 {
     SDL_SetTextureColorMod(texture, r, g, b);

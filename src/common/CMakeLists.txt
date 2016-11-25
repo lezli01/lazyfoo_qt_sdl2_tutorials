@@ -1,6 +1,7 @@
 add_library(common
     utils.cpp
     ltexture.cpp
+    lbutton.cpp
 )
 
 target_link_libraries(common
